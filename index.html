@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MathGo: Inicio</title>
+</head>
+<body>
+    <!--el header lo copie en los otros html para que cuando se haga el css todos queden iguales al navegar enre paginas-->
+    <header>
+        <!--esto es para la barra del header, la parte de la imagen del logo y las secciones de la pagina-->
+        <div class="logo">
+            <img src=" " alt="logo">
+            <p>MathGo</p>
+        </div>
+        <!--esto es para el menu de las 3 lineas que se abre a un lado en el cel cuando se haga el mediaqueri-->
+        <button class="menuHamburger" id="hamburger-boton">
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </button>
+        <!--la navegacion con los links de cada parte de la pag-->
+        <div class="navegacion">
+          <a href="index.html">Inicio</a>
+          <a href="programas.html">Lista de programas</a>
+          <a href="recursos.html">Recursos</a>
+          <a href="subscripciones.html">Mis sucripciones</a>
+        </div>
+       <!--esto es para poner el saludo del usuario que se inscribe en la pagina (que luego se programa con el backend)-->
+        <div class="usuario">
+            <span class="nombreDeUsuario"> Hola, nombre</span>
+        </div>
+
+    </header>
+    <main>
+        <!--aui van a ir tarjetas con los cursos principales que se ofrecen -->
+        <section id="nuestrosCursos">
+            <h1>Nuestros cursos</h1>
+            <!-- hice el div para separar las tarjetas y poder poner el diseño de las tarjetas con el css al mismo tiempo-->
+            <div class="contenedor-de-cursos">
+                <div class="tarjeta-curso"></div>
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRs5FBaBHZRciK5lOqyImvXWC_DFLmxO77ODMKumQmEdQ&s=10" alt="imagen de referencia de clase refuerzo">
+                  <h3>Sesiones refuerzo personalizadas</h3>
+                  <p><b>Duración:</b> 4 semanas</p>
+                  <p><b>Precio:</b>$122.000</p>
+                  <button class="boton-compra">Reservar</button>
+                </div>
+
+                <div class="contenedor-curso"></div>
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTE57_NlQlI72FwlG3kWZzQyt7ZWAS1NCR64QzsBU4tNQ&s=10" alt="imagen de referencia de clase fundamentos">
+                  <h3>Curso Fundamentos de matemáticas (Nivel 1)</h3>
+                  <p><b>Duración:</b>15 semanas</p>
+                  <p><b>Precio:</b>$150.000</p>
+                  <button class="boton-compra">Reservar</button>  
+                 </div>
+
+                 <div class="contenedor-curso"></div>
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR35makGilXyn4dzHEkAq5yY8rQNnHB4BXfX7drLvcymQ&s=10" alt="imagen de referencia de clase basica">
+                  <h3>Curso matematicas basicas (Nivel 2)</h3>
+                  <p><b>Duración:</b> 15 semanas</p>
+                  <p><b>Precio:</b>$150.000</p>
+                  <button class="boton-compra">Reservar</button>  
+                 </div>
+
+                 <div class="contenedor-curso"></div>
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxmAz59P4ZG6VJdqpXVabMwmWdDR4hpQIYEkC1ZgzdZg&s=10" alt="imagen de referencia de clase avanzada">
+                  <h3>Curso matemáticas avanzadas (nivel 3)</h3>
+                  <p><b>Duración:</b> 1 año </p>
+                  <p><b>Precio:</b>$350.000</p>
+                  <button class="boton-compra">Reservar</button>  
+                 </div>
+
+                 <div class="contenedor-curso"></div>
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlbrg8JK28G-l8KVyAExuGsVY8XkKlq5scJdYhuk6BmQ&s=10" alt="imagen de referencia de clase">
+                  <h3>Curso matemáticas avanzadas II (nivel superior)</h3>
+                  <p><b>Duración:</b> 1 año</p>
+                  <p><b>Precio:</b>$350.000</p>
+                  <button class="boton-compra">Reservar</button>  
+                 </div>
+                
+            </div>
+        </section>
+
+        <section id="elegirnos">
+            <h1>¿Por qué elegirnos?</h1>
+            <!-- no lo dividi para hacer cajas como tal,sino poder hacer el display como el de la referencia-->
+               <div class="cajas-de-motivos">
+                   <div class="cajas" >
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQszlDOqlLuKgYxKk9JIzzIAn3297hP57KuIEKXgq9LUA&s=10" alt="imagen de referencia">
+                    <h3>Clases de calidad</h3>
+                    <p> Contenido didáctico basado en las pegagogias actuales y dinamicas diseñado para facilitar la comprension de conceptos matemáticos complejos.</p>
+                   </div>
+
+                   <div class="cajas" >
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdzQ2A1tSOoRMK4z_FSZgUMH8k-SuEXPDsqPJQuc32pg&s=10" alt="imagen de referencia">
+                    <h3>Aprendizaje remoto</h3>
+                    <p> Gracias a nuestra modalidad 100% virtual, puedes acceder a tus lecciones y cursos desde cualquier dispositivo y desde cualquier lugar.</p>
+                   </div>
+
+                   <div class="cajas" >
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThKaqNzJKq7WGIMXHGym0ace8zDmovJxFQY7igYhNxQw&s=10" alt="imagen de referencia">
+                    <h3>Recursos en un solo lugar</h3>
+                    <p> Todo lo que necesitas para tu aprendizaje matemático:clases,recursos,tutorias y actividades lo podras encontrar en un solo espacio digital.</p>
+                   </div>
+
+                   <div class="cajas" >
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSycPqVunLFMeSfgh50q0yzHIhG8wtmqQp1avpSYybCOA&s=10">
+                    <h3>Metodologias pedagogicas activas</h3>
+                    <p> Se utilizan tecnicas y metodologias ctuales que fomentan el analisis y la participacion activa del estudiante para propicia un aprendizaje significativo.</p>
+                   </div>
+
+                   <div class="cajas" >
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_a3ZvMnJVdyIFCHrQoVe9Yzp0HyL1dpW7zWrV8syNMw&s=10" alt="imagen de referencia">
+                    <h3>Atencion Personalizada</h3>
+                    <p> Para garanizar el aprendizaje se recibe un asesoramiento personalizado para superar las dudas especificas, teniendo en cuenta el conocimiento previo para consolidar tu conocimiento y mejorar tu rendimiento de manera rapida y eficaz.</p>
+                   </div>
+
+                   <div class="cajas" >
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoIaWDb_jM9XtbhUqyjvl7FXrhCIUVZ0zF_3c04WrTLw&s=10" alt="imagen de referencia">
+                    <h3>Videoclases</h3>
+                    <p> Explora nuestra biblioteca de recursos interactivos, donde podras encontrar material multimedia para completar tu estudio autonomo y repasar a tu ritmo.</p>
+                   </div>
+
+               </div>
+        </section>
+<!--esta es la otra seccion que es solo la imagen y el parrafo tal como la referencia-->
+        <section id="sobreNosotros">
+            <h1>Sobre nosotros</h1>
+            <p>Matemáticas Digital es un emprendimiento educativo que busca hacer que las matemáticas sean más fáciles, prácticas y divertidas. Ofrecemos clases en línea, videos y recursos educativos para estudiantes que desean mejorar sus conocimientos y aprender a su propio ritmo.</p>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWzTS9Z78uqBI36I_Iw6HG2sv9ByaMQnapdEiFufGZhg&s=10" alt="imagen simbolos matematicos">
+
+        </section>
+
+        <section id="recursos">
+            <h1>Recursos educativos<h1>
+             <div class="contenedor-de-recursos">
+                <div class="tarjeta-recursos"></div>
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTScl4w0PF_F2vY0k_ZxUuNcD4ZNkrTp6yyBQJLTe5soA&s=10" alt="imagen de referencia recurso">
+                  <h3>videos educativos</h3>
+                  <button class="boton-ver-recursos">Ver más</button>
+
+                   <div class="contenedor-de-recursos">
+                <div class="tarjeta-recursos"></div>
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRl5BIDh-FzZyxGQr-2h_xtp8NZ7X8Cf-hIlokCeJ_w7A&s=10" alt="imagen de referencia recurso">
+                  <h3>Material de estudio</h3>
+                  <button class="boton-ver-recursos">Ver más</button>
+
+                   <div class="contenedor-de-recursos">
+                <div class="tarjeta-recursos"></div>
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUI2s594P50xcMZSl_F0q9ZEWTPU0dXrCaH-adgPYExg&s=10" alt="imagen de referencia recurso">
+                  <h3>Actividades matemáticas</h3>
+                  <button class="boton-ver-recursos">Ver más</button>
+
+                   <div class="contenedor-de-recursos">
+                <div class="tarjeta-recursos"></div>
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0sDycSmn3vg_UYz2dvSqkVVtFefxLbsBSUW_4vT2EhQ&s=10" alt="imagen de referencia recurso">
+                  <h3>Sesiones de aprendizaje remoto</h3>
+                  <button class="boton-ver-recursos">Ver más</button>
+                </div>
+            </div>
+
+        </section>
+
+        <section id="contactanos">
+            <h1>Contáctanos</h1>
+            <p>¿tienes alguna duda sobre nuestros cursos o recursos? ¡Escribenos!</p>
+
+          <ul>
+            <li>MathGodigital@gmail.com</li>
+            <li>+57 3024800695</li>
+          </ul>
+    <!--en esta parte se abre un formulario para que se comuniquen directamente desde la pagina-->
+    <form>
+           <fieldset> 
+    <legend> <b> Solicitudes </b></legend>
+    <label>
+        Nombre completo:
+    <input type="text" required>
+    </label>
+   
+     <label>
+       Correo:
+    <input type="email" required>
+    </label>
+
+    <label>
+       Edad del estudiante:
+    <input type="number" required>
+    </label>
+ 
+     
+       <p>Curso de interes</p>
+    <label>
+    <input type="radio" name="curso" value="refuerzo">Sesiones refuerzo personalizadas
+    </label>
+
+     <label>
+    <input type="radio" name="curso" value="fundamentos" >Curso fundamentos de matematicas
+    </label>
+
+ <label>
+    <input type="radio" name="curso" value="nivel 1" >Curso matematicas basicas (nivel 1)
+    </label>
+
+     <label>
+    <input type="radio" name="curso" value="nivel 2" >Curso matematicas avanzadas (nivel 2)
+    </label>
+
+     <label>
+    <input type="radio" name="curso" value="nivel superior">Curso matematicas avanzadas II (nivel superior)
+    </label>
+
+    <label>
+        Mensaje:
+    <input type="text" required>
+    </label>
+    </fieldset>
+    <button>Enviar</button>
+        </form>
+        </section>
+        
+    </main>
+    <footer> 
+
+    <p>MathGo plataforma matemática digital. Todos los derechos reservados ©.</p>
+
+    </footer>
+    
+</body>
+</html>
