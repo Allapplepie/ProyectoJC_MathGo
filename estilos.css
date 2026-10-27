@@ -1,0 +1,371 @@
+/* ==========================================
+   MATHGO - estilos compartidos
+   Paleta: #d3e9f0 #76bcf5 #5889b2 #69d6cc
+   ========================================== */
+
+:root {
+    --azul-claro: #d3e9f0;
+    --azul: #76bcf5;
+    --azul-medio: #5889b2;
+    --turquesa: #69d6cc;
+    --texto: #183247;
+    --blanco: #ffffff;
+    --superficie: #f8fcfd;
+    --borde: #c2dce8;
+    --sombra: 0 8px 24px rgba(47, 103, 143, 0.12);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: var(--azul-claro);
+    color: var(--texto);
+    font-family: "Segoe UI", Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Barra superior y navegación */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 14px clamp(18px, 5vw, 64px);
+    background: var(--blanco);
+    border-bottom: 3px solid var(--turquesa);
+    box-shadow: 0 4px 18px rgba(24, 50, 71, 0.08);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.logo img {
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+}
+
+.logo p {
+    margin: 0;
+    color: var(--azul-medio);
+    font-size: 1.65rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.navegacion {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.navegacion a {
+    display: inline-block;
+    padding: 10px 14px;
+    color: var(--texto);
+    text-decoration: none;
+    font-weight: 650;
+    border-radius: 10px;
+    transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.navegacion a:hover,
+.navegacion a:focus-visible {
+    background: var(--azul-claro);
+    color: #24577f;
+    transform: translateY(-1px);
+    outline: none;
+}
+
+.usuario {
+    flex-shrink: 0;
+    padding: 9px 13px;
+    background: var(--azul-claro);
+    border-radius: 999px;
+    color: #24577f;
+    font-weight: 650;
+}
+
+/* Botón de menú para pantallas pequeñas */
+.menuHamburger {
+    display: none;
+    width: 44px;
+    height: 42px;
+    padding: 9px;
+    background: var(--azul-medio);
+    border: 0;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.menuHamburger span {
+    display: block;
+    height: 3px;
+    margin: 4px 0;
+    background: var(--blanco);
+    border-radius: 3px;
+}
+
+/* Contenido general */
+main {
+    width: min(1180px, 92%);
+    margin: 36px auto;
+}
+
+section {
+    margin: 0 0 38px;
+    padding: clamp(20px, 4vw, 38px);
+    background: var(--superficie);
+    border: 1px solid rgba(88, 137, 178, 0.22);
+    border-radius: 22px;
+    box-shadow: var(--sombra);
+}
+
+h1, h2, h3, h4 {
+    line-height: 1.2;
+    color: #315f83;
+}
+
+h1 {
+    margin-top: 0;
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+}
+
+h2 {
+    font-size: clamp(1.4rem, 3vw, 2rem);
+}
+
+p {
+    overflow-wrap: anywhere;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Tarjetas: cursos, recursos y motivos */
+.contenedor-de-cursos,
+.contenedor-curso,
+.contenedor-de-recursos,
+.cajas-de-motivos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 22px;
+    align-items: stretch;
+}
+
+.tarjeta-curso,
+.contenedor-curso,
+.tarjeta-recursos,
+.cajas,
+.contenedor-de-recursos > div {
+    min-width: 0;
+    padding: 18px;
+    overflow: hidden;
+    background: var(--blanco);
+    border: 1px solid var(--borde);
+    border-radius: 18px;
+    box-shadow: 0 5px 16px rgba(47, 103, 143, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tarjeta-curso:hover,
+.contenedor-curso:hover,
+.tarjeta-recursos:hover,
+.cajas:hover,
+.contenedor-de-recursos > div:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--sombra);
+}
+
+.contenedor-de-cursos img,
+.contenedor-de-recursos img,
+.cajas img {
+    display: block;
+    width: 100%;
+    max-height: 220px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+#sobreNosotros img {
+    display: block;
+    width: min(100%, 600px);
+    margin: 20px auto 0;
+    border-radius: 16px;
+}
+
+/* Botones y enlaces tipo botón */
+button,
+.boton-compra,
+.boton-ver-recursos,
+input[type="submit"] {
+    display: inline-block;
+    padding: 12px 20px;
+    background: var(--azul-medio);
+    color: var(--blanco);
+    border: 0;
+    border-radius: 10px;
+    font: inherit;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+button:hover,
+.boton-compra:hover,
+.boton-ver-recursos:hover,
+input[type="submit"]:hover {
+    background: #3e719b;
+    transform: translateY(-1px);
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+    outline: 3px solid var(--turquesa);
+    outline-offset: 3px;
+}
+
+/* Formularios */
+form {
+    max-width: 720px;
+    margin: 22px auto 0;
+}
+
+fieldset {
+    display: grid;
+    gap: 14px;
+    padding: 22px;
+    border: 2px solid var(--azul);
+    border-radius: 16px;
+}
+
+legend {
+    padding: 0 8px;
+    color: #315f83;
+    font-weight: 800;
+}
+
+label {
+    display: block;
+    margin: 7px 0;
+}
+
+input:not([type="radio"]):not([type="checkbox"]),
+textarea,
+select {
+    display: block;
+    width: 100%;
+    margin-top: 6px;
+    padding: 12px 14px;
+    color: var(--texto);
+    background: var(--blanco);
+    border: 1px solid #a9c9dd;
+    border-radius: 10px;
+    font: inherit;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    accent-color: var(--azul-medio);
+}
+
+textarea {
+    min-height: 110px;
+    resize: vertical;
+}
+
+/* Pie de página */
+footer {
+    padding: 24px;
+    background: var(--azul-medio);
+    color: var(--blanco);
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Adaptación a móviles */
+@media (max-width: 850px) {
+    header {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .menuHamburger {
+        display: block;
+        margin-left: auto;
+    }
+
+    .navegacion {
+        display: none;
+        order: 3;
+        width: 100%;
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .navegacion a {
+        text-align: center;
+    }
+
+    /* Si se agrega la clase .abierto con JavaScript, aparece el menú */
+    .navegacion.abierto {
+        display: flex;
+    }
+
+    .usuario {
+        order: 2;
+    }
+
+    main {
+        width: min(100% - 24px, 1180px);
+        margin: 20px auto;
+    }
+
+    section {
+        padding: 20px;
+        border-radius: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo p {
+        font-size: 1.35rem;
+    }
+
+    .usuario {
+        font-size: 0.9rem;
+    }
+
+    .contenedor-de-cursos,
+    .contenedor-curso,
+    .contenedor-de-recursos,
+    .cajas-de-motivos {
+        grid-template-columns: 1fr;
+    }
+}
