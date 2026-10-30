@@ -240,6 +240,8 @@ img {
     border-radius: 18px;
     box-shadow: 0 5px 16px rgba(47, 103, 143, 0.08);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    text-decoration: none;
+    text-align: center;
 }
 
 .tarjeta-curso:hover,
@@ -301,6 +303,20 @@ textarea:focus-visible,
 select:focus-visible {
     outline: 3px solid var(--turquesa);
     outline-offset: 3px;
+}
+
+a.tarjeta-recurso-link {
+    text-decoration: none !important; 
+    color: inherit !important; 
+    display: block;
+}
+
+/* emojis más grandes */
+.icono-recurso {
+    font-size: 3.5rem;
+    display: block;
+    margin-bottom: 15px;
+    line-height: 1; 
 }
 
 /* Formularios */
