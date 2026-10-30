@@ -42,7 +42,8 @@ header {
     justify-content: space-between;
     gap: 24px;
     padding: 14px clamp(18px, 5vw, 64px);
-    background: var(--blanco);
+    background:linear-gradient(to bottom right, var(--azul) 0%, var(--azul-claro) 40%,var(--blanco) 100%);
+    /*background: var(--blanco);*/
     border-bottom: 3px solid var(--turquesa);
     box-shadow: 0 4px 18px rgba(24, 50, 71, 0.08);
 }
@@ -146,10 +147,12 @@ h1, h2, h3, h4 {
 h1 {
     margin-top: 0;
     font-size: clamp(1.8rem, 4vw, 2.6rem);
+    text-align: center;
 }
 
 h2 {
     font-size: clamp(1.4rem, 3vw, 2rem);
+    text-align: center;
 }
 
 p {
@@ -160,7 +163,59 @@ img {
     max-width: 100%;
     height: auto;
 }
+#bienvenida {
+    background: linear-gradient(135deg, var(--texto) 0%, var(--azul) 100%);
+    color: var(--blanco);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 100px;
+}
 
+#bienvenida h1, 
+#bienvenida h2, 
+#bienvenida h3, 
+#bienvenida h4 {
+    color: var(--blanco);
+    text-align: center;
+}
+/*css pagina de los diferentes cursos*/
+.contenedor-volver {
+    margin-bottom: 20px;
+}
+
+.enlace-volver {
+    color: var(--azul-medio);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.enlace-volver:hover {
+    text-decoration: underline;
+}
+
+
+.cuadro-detalles-curso {
+    background-color: var(--azul-claro);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    border-left: 5px solid var(--azul-medio);
+}
+
+.cuadro-detalles-curso h2 {
+    margin-top: 0;
+}
+
+
+.contenedor-formulario-curso {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 2px solid var(--azul-medio);
+}
+
+
+.btn-formulario {
+    margin-top: 15px;
+}
 /* Tarjetas: cursos, recursos y motivos */
 .contenedor-de-cursos,
 .contenedor-curso,
@@ -351,6 +406,7 @@ footer p {
         padding: 20px;
         border-radius: 16px;
     }
+    
 }
 
 @media (max-width: 480px) {

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matemáticas avanzadas II - MathGo</title>
+    <link rel="stylesheet" href="../styles.css"> 
+</head>
+<body>
+
+    <header class="encabezado">
+        <a class="logo" href="../index.html" aria-label="MathGo, página de inicio">
+            <span class="logo-texto">MathGo</span>
+        </a>
+        <button class="menuHamburger" id="hamburger-boton" type="button" aria-label="Abrir menú" aria-controls="navegacion-principal" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+        <nav class="navegacion" id="navegacion-principal" aria-label="Navegación principal">
+            <a href="../index.html">Inicio</a>
+            <a href="../programas.html">Lista de programas</a>
+            <a href="../recursos.html">Recursos</a>
+            <a href="../subscripciones.html">Mis suscripciones</a>
+        </nav>
+        <div class="usuario">
+            <span class="nombreDeUsuario">Hola, visitante</span>
+        </div>
+    </header>
+
+    <main>
+          <div class="contenedor-volver">
+          
+            <a href="../programas.html" class="enlace-volver">← Volver a la lista de programas</a>
+        </div>
+
+        <section aria-labelledby="titulo-curso">
+            <h1 id="titulo-curso">Matemáticas avanzadas II</h1>
+            
+            <div class="cuadro-detalles-curso">
+                <h2>Detalles del Curso</h2>
+                <ul>
+                    <li><strong>Duración:</strong> 12 semanas (24 sesiones de 2 horas).</li>
+                    <li><strong>Modalidad:</strong> Clases virtuales en vivo + laboratorios de software matemático.</li>
+                    <li><strong>Nivel:</strong> Superior / Universitario (Cálculo Multivariable y E.D.).</li>
+                    <li><strong>Precio:</strong> $550.000 COP.</li>
+                    <li><strong>Incluye:</strong> Acceso a MATLAB/GeoGebra, simulacros de examen de admisión a posgrado, material bibliográfico en PDF y asesoría de tesis/proyectos.</li>
+                </ul>
+            </div>
+
+            <div>
+                <h2>Descripción del programa</h2>
+                <p>Se centra en el aprendizaje y aplicación de teorías matemáticas de altísima complejidad. Este curso está diseñado para estudiantes de ingeniería, ciencias exactas o carreras afines que necesiten dominar herramientas matemáticas avanzadas para resolver problemas del mundo real, modelado de sistemas y análisis teórico profundo.</p>
+                
+                <h2>¿Qué aprenderás?</h2>
+                <ul>
+                    <li>Cálculo multivariable (derivadas parciales, integrales múltiples).</li>
+                    <li>Ecuaciones diferenciales ordinarias y transformadas de Laplace.</li>
+                    <li>Álgebra lineal avanzada (valores propios, espacios vectoriales).</li>
+                    <li>Modelado matemático de fenómenos físicos y económicos.</li>
+                </ul>
+            </div>
+
+            <div class="contenedor-formulario-curso">
+                <h2>Solicitar o Reservar Curso</h2>
+                <p>Déjanos tus datos y nos pondremos en contacto contigo para concretar el pago y los horarios.</p>
+                <form action="#" method="POST" id="formulario-reserva">
+                    <fieldset>
+                        <legend>Datos del estudiante</legend>
+                        <label for="nombre">Nombre completo:</label>
+                        <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre aquí">
+                        
+                        <label for="email">Correo electrónico:</label>
+                        <input type="email" id="email" name="email" required placeholder="correo@ejemplo.com">
+                        
+                        <label for="telefono">Teléfono de contacto:</label>
+                        <input type="tel" id="telefono" name="telefono" required placeholder="Ej: +57 300 123 4567">
+                        
+                        <button type="submit" class="boton-ver-recursos" style="margin-top: 15px;">Solicitar Reserva</button>
+                    </fieldset>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>MathGo, plataforma matemática digital. Todos los derechos reservados ®.</p>
+    </footer>
+    
+   
+    <script src="../script.js"></script>
+</body>
+</html>
