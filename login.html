@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión - MathGo</title>
+    <link rel="stylesheet" href="styles.css"> 
+</head>
+<body>
+
+    <header class="encabezado">
+        <a class="logo" href="index.html" aria-label="MathGo, página de inicio">
+            <span class="logo-texto">MathGo</span>
+        </a>
+        <button class="menuHamburger" id="hamburger-boton" type="button" aria-label="Abrir menú" aria-controls="navegacion-principal" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+        <nav class="navegacion" id="navegacion-principal" aria-label="Navegación principal">
+            <a href="index.html">Inicio</a>
+            <a href="programas.html">Lista de programas</a>
+            <a href="recursos.html">Recursos</a>
+            <a href="subscripciones.html">Mis suscripciones</a>
+        </nav>
+        <div class="usuario">
+            <div class="usuario">
+    <a href="login.html" class="nombreDeUsuario">
+        Hola, visitante (Ingresar)
+    </a>
+</div>
+        </div>
+    </header>
+
+    <main>
+        <section aria-labelledby="titulo-login" class="contenedor-login">
+            <h1 id="titulo-login">Iniciar Sesión</h1>
+            <p>Ingresa a tu cuenta para acceder a tus cursos.</p>
+
+            <!-- Formulario preparado para el backend -->
+            <form action="login.php" method="POST" id="formulario-login">
+                <fieldset>
+                    <legend>Datos de acceso</legend>
+                    
+                    <label for="email">Correo electrónico:</label>
+                    <input type="email" id="email" name="email" required placeholder="correo@ejemplo.com">
+
+                    <label for="password">Contraseña:</label>
+                    <input type="password" id="password" name="password" required placeholder="********">
+
+                    <button type="submit" class="boton-ver-recursos btn-formulario">Ingresar</button>
+                </fieldset>
+            </form>
+            
+            <p style="text-align: center; margin-top: 20px;">
+                ¿No tienes cuenta? <a href="#" style="color: var(--azul-medio); font-weight: bold;">Regístrate aquí</a>
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>MathGo, plataforma matemática digital. Todos los derechos reservados ®.</p>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>

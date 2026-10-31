@@ -33,3 +33,33 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
+
+//animacion de tarjetas
+const tarjetasAnimadas = document.querySelectorAll('.tarjeta-recursos');
+if (tarjetasAnimadas.length > 0) {
+    tarjetasAnimadas.forEach((tarjeta, index) => {
+        tarjeta.classList.add('animar-entrada');
+        tarjeta.style.animationDelay = `${index * 0.1}s`;
+    });
+}
+
+//buscador de videos
+const buscadorVideos = document.getElementById("buscador-videos");
+
+if (buscadorVideos) {
+    buscadorVideos.addEventListener("keyup", (e) => {
+        const textoBusqueda = e.target.value.toLowerCase();
+        const tarjetas = document.querySelectorAll(".tarjeta-recurso-link");
+
+        tarjetas.forEach((tarjeta) => {
+            const titulo = tarjeta.querySelector("h2").innerText.toLowerCase();
+            const descripcion = tarjeta.querySelector("p").innerText.toLowerCase();
+
+            if (titulo.includes(textoBusqueda) || descripcion.includes(textoBusqueda)) {
+                tarjeta.style.display = "block";
+            } else {
+                tarjeta.style.display = "none";
+            }
+        });
+    });
+}
