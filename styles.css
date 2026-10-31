@@ -31,6 +31,11 @@ body {
     font-family: "Segoe UI", Arial, sans-serif;
     line-height: 1.6;
 }
+#fondo-programas,
+#fondo-subscripciones{
+background:linear-gradient(to bottom, var(--azul-claro),var(--azul-medio));
+
+}
 
 /* Barra superior y navegación */
 header {
@@ -452,7 +457,7 @@ textarea {
 /* Pie de página */
 footer {
     padding: 24px;
-    background: var(--azul-medio);
+    background: var(--texto);
     color: var(--blanco);
     text-align: center;
 }

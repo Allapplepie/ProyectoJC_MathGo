@@ -3,66 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Consulta las opciones de aprendizaje de MathGo. Las suscripciones y reservas requieren conexión con un sistema de gestión para guardar tus datos.">
-    <title>MathGo | subscripciones</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Mis Suscripciones - MathGo</title>
+    <link rel="stylesheet" href="styles.css"> 
 </head>
-<body>
-<header class="encabezado">
-    <a class="logo" href="index.html" aria-label="MathGo, página de inicio">
-        <span class="logo-texto">MathGo</span>
-    </a>
+<body id="fondo-subscripciones">
 
-    <button class="menuHamburger" id="hamburger-boton"
-            type="button" aria-label="Abrir menú" aria-controls="navegacion-principal"
-            aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-    </button>
-
-    <nav class="navegacion" id="navegacion-principal" aria-label="Navegación principal">
-        <a href="index.html">Inicio</a>
-        <a href="programas.html">Lista de programas</a>
-        <a href="recursos.html">Recursos</a>
-        <a href="subscripciones.html">Mis suscripciones</a>
-    </nav>
-
-    <div class="usuario">
+    <header class="encabezado">
+        <a class="logo" href="index.html" aria-label="MathGo, página de inicio">
+            <span class="logo-texto">MathGo</span>
+        </a>
+        <button class="menuHamburger" id="hamburger-boton" type="button" aria-label="Abrir menú" aria-controls="navegacion-principal" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+        <nav class="navegacion" id="navegacion-principal" aria-label="Navegación principal">
+            <a href="index.html">Inicio</a>
+            <a href="programas.html">Lista de programas</a>
+            <a href="recursos.html">Recursos</a>
+            <a href="subscripciones.html">Mis suscripciones</a>
+        </nav>
         <div class="usuario">
+            <div class="usuario">
     <a href="login.html" class="nombreDeUsuario">
         Hola, visitante (Ingresar)
     </a>
 </div>
-    </div>
-</header>
-<main>
-    <section aria-labelledby="titulo-principal">
-        <h1 id="titulo-principal">Mis suscripciones</h1>
-        <p>Consulta las opciones de aprendizaje de MathGo. Las suscripciones y reservas requieren conexión con un sistema de gestión para guardar tus datos.</p>
-        <div class="contenedor-de-recursos">
-            <article class="tarjeta-recursos">
-                <h2>Refuerzo personalizado</h2>
-                <p>Duración: 4 semanas. Precio publicado: $122.000.</p>
-            </article>
-            <article class="tarjeta-recursos">
-                <h2>Fundamentos de matemáticas</h2>
-                <p>Duración: 15 semanas. Precio publicado: $150.000.</p>
-            </article>
-            <article class="tarjeta-recursos">
-                <h2>Matemáticas básicas</h2>
-                <p>Duración: 15 semanas. Precio publicado: $150.000.</p>
-            </article>
-            <article class="tarjeta-recursos">
-                <h2>Matemáticas avanzadas</h2>
-                <p>Duración: 1 año. Precio publicado: $350.000.</p>
-            </article>
         </div>
-    </section>
-</main>
-<footer>
-    <p>MathGo, plataforma matemática digital. Todos los derechos reservados ©.</p>
-</footer>
-<script src="script.js" defer></script>
+    </header>
+
+    <main>
+        <section aria-labelledby="titulo-principal">
+            <!-- Título cambiado para el panel del estudiante -->
+            <h1 id="titulo-principal">Mis Cursos Adquiridos</h1>
+            <p>Bienvenido a tu panel de estudiante. Aquí tienes acceso a las aulas de los cursos que has comprado.</p>
+            
+            <div class="contenedor-de-recursos">
+                
+               
+                <article class="tarjeta-recursos">
+                    <h2>Refuerzo personalizado</h2>
+                    <p>Estado: <strong style="color: #27ae60;">Activo</strong></p>
+                  
+                    <a href="aulas/aula.html?id=1" class="boton-ver-recursos" style="margin-top: 15px; display: inline-block;">Entrar al Aula</a>
+                </article>
+
+            
+                <article class="tarjeta-recursos">
+                    <h2>Fundamentos matemáticas (Nivel 1)</h2>
+                    <p>Estado: <strong style="color: #27ae60;">Activo</strong></p>
+                    <a href="aulas/aula.html?id=2" class="boton-ver-recursos" style="margin-top: 15px; display: inline-block;">Entrar al Aula</a>
+                </article>
+
+            
+                <article class="tarjeta-recursos">
+                    <h2>Matemáticas básicas (Nivel 2)</h2>
+                    <p>Estado: <strong style="color: #27ae60;">Activo</strong></p>
+                    <a href="aulas/aula.html?id=3" class="boton-ver-recursos" style="margin-top: 15px; display: inline-block;">Entrar al Aula</a>
+                </article>
+
+               
+                <article class="tarjeta-recursos">
+                    <h2>Matemáticas avanzadas (Nivel 3)</h2>
+                    <p>Estado: <strong style="color: #27ae60;">Activo</strong></p>
+                    <a href="aulas/aula.html?id=4" class="boton-ver-recursos" style="margin-top: 15px; display: inline-block;">Entrar al Aula</a>
+                </article>
+
+              
+                <article class="tarjeta-recursos">
+                    <h2>Matemáticas avanzadas II (Nivel Superior)</h2>
+                    <p>Estado: <strong style="color: #27ae60;">Activo</strong></p>
+                    <a href="aulas/aula.html?id=5" class="boton-ver-recursos" style="margin-top: 15px; display: inline-block;">Entrar al Aula</a>
+                </article>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>MathGo, plataforma matemática digital. Todos los derechos reservados ®.</p>
+    </footer>
+    
+    <script src="script.js"></script>
 </body>
 </html>
