@@ -216,6 +216,48 @@ img {
 .btn-formulario {
     margin-top: 15px;
 }
+
+/*css de la biblioteca de videos*/
+
+.titulo-seccion-videos {
+    color: var(--azul-medio); 
+    margin-top: 40px; 
+    border-bottom: 2px solid var(--azul-claro); 
+    padding-bottom: 10px;
+}
+
+/* simulador css */
+.simulador-video {
+    background-color: #000; 
+    border-radius: 10px; 
+    height: 250px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    color: white; 
+    margin-top: 15px; 
+    position: relative; 
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.simulador-video:hover {
+    transform: scale(1.02); 
+}
+
+/* El botón de Play */
+.play-icon {
+    margin: 0; 
+    font-size: 4rem;
+}
+
+/* El texto de la duración abajo a la izquierda */
+.video-duracion {
+    position: absolute; 
+    bottom: 15px; 
+    left: 20px; 
+    font-size: 0.9rem;
+}
 /* Tarjetas: cursos, recursos y motivos */
 .contenedor-de-cursos,
 .contenedor-curso,

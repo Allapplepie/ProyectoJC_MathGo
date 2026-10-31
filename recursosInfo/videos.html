@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Videos educativos - MathGo</title>
+    <title>Videoteca - MathGo</title>
     <link rel="stylesheet" href="../styles.css"> 
 </head>
 <body>
+
     <header class="encabezado">
         <a class="logo" href="../index.html" aria-label="MathGo, página de inicio">
             <span class="logo-texto">MathGo</span>
@@ -16,31 +17,76 @@
         </button>
         <nav class="navegacion" id="navegacion-principal" aria-label="Navegación principal">
             <a href="../index.html">Inicio</a>
-            <a href="../programas.html">Programas</a>
+            <a href="../programas.html">Lista de programas</a>
             <a href="../recursos.html">Recursos</a>
-            <a href="../subscripciones.html">Suscripciones</a>
+            <a href="../subscripciones.html">Mis suscripciones</a>
         </nav>
+        <div class="usuario">
+            <span class="nombreDeUsuario">Hola, visitante</span>
+        </div>
     </header>
 
     <main>
         <div class="contenedor-volver">
             <a href="../recursos.html" class="enlace-volver">← Volver a Recursos</a>
         </div>
+        
         <section aria-labelledby="titulo-principal">
-            <h1 id="titulo-principal"> Videos educativos</h1>
-            <p>Explora nuestra biblioteca de videos para repasar los conceptos más importantes.</p>
-            
-            <div class="cuadro-detalles-curso">
-                <h3>Video 1: Introducción al Álgebra</h3>
-                <p>Duración: 15 min.</p>
-            </div>
-            <div class="cuadro-detalles-curso">
-                <h3>Video 2: Resolución de Ecuaciones</h3>
-                <p>Duración: 20 min. (Aquí iría el reproductor de video)</p>
-            </div>
+            <h1 id="titulo-principal"> ¡Videoteca MathGo!</h1>
+            <p>Selecciona el curso para ver las clases en video disponibles.</p>
+
+            <div class="contenedor-de-recursos">
+    
+    <a href="videos-basicos.html" class="tarjeta-recurso-link">
+        <article class="tarjeta-recursos">
+            <span class="icono-recurso">🎯</span>
+            <h2>Sesiones de refuerzo</h2>
+            <p>Videos de apoyo para tus clases personalizadas.</p>
+        </article>
+    </a>
+
+    <a href="videos-basicos.html" class="tarjeta-recurso-link">
+        <article class="tarjeta-recursos">
+            <span class="icono-recurso">📘</span>
+            <h2>Fundamentos (Nivel 1)</h2>
+            <p>Repasa los conceptos esenciales en video.</p>
+        </article>
+    </a>
+
+    <a href="videos-intermedios.html" class="tarjeta-recurso-link">
+        <article class="tarjeta-recursos">
+            <span class="icono-recurso">📙</span>
+            <h2>Matemáticas básicas (Nivel 2)</h2>
+            <p>Videos de operaciones y resolución de problemas.</p>
+        </article>
+    </a>
+
+    <a href="videos-intermedios.html" class="tarjeta-recurso-link">
+        <article class="tarjeta-recursos">
+            <span class="icono-recurso">📕</span>
+            <h2>Avanzadas (Nivel 3)</h2>
+            <p>Temas de mayor complejidad explicados paso a paso.</p>
+        </article>
+    </a>
+
+    <a href="videos-avanzados.html" class="tarjeta-recurso-link">
+        <article class="tarjeta-recursos">
+            <span class="icono-recurso">🎓</span>
+            <h2>Avanzadas II (Nivel Superior)</h2>
+            <p>Contenido teórico y práctico de nivel universitario.</p>
+        </article>
+    </a>
+
+</div>
+                    
         </section>
     </main>
-    <footer><p>MathGo, plataforma matemática digital. Todos los derechos reservados ®.</p></footer>
+
+    <footer>
+        <p>MathGo, plataforma matemática digital. Todos los derechos reservados ®.</p>
+    </footer>
+    
+
     <script src="../script.js"></script>
 </body>
 </html>

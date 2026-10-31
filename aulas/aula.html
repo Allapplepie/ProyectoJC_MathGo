@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula Virtual - MathGo</title>
+    
+    <link rel="stylesheet" href="../styles.css"> 
+</head>
+<body>
+
+    <header class="encabezado">
+        <a class="logo" href="../index.html" aria-label="MathGo, página de inicio">
+            <span class="logo-texto">MathGo</span>
+        </a>
+        <button class="menuHamburger" id="hamburger-boton" type="button" aria-label="Abrir menú" aria-controls="navegacion-principal" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+        <nav class="navegacion" id="navegacion-principal" aria-label="Navegación principal">
+            
+            <a href="../index.html">Inicio</a>
+            <a href="../programas.html">Lista de programas</a>
+            <a href="../recursos.html">Recursos</a>
+            <a href="../subscripciones.html">Mis suscripciones</a>
+        </nav>
+        <div class="usuario">
+            <span class="nombreDeUsuario">Hola, visitante</span>
+        </div>
+    </header>
+
+    <main>
+        <div class="contenedor-volver">
+            <a href="../subscripciones.html" class="enlace-volver">← Volver a mis cursos</a>
+        </div>
+        
+        <section aria-labelledby="titulo-principal">
+            <!-- El backend reemplazará este texto con el nombre real del curso -->
+            <h1 id="titulo-principal">Aula Virtual (Cargando curso...)</h1>
+            
+            <div class="cuadro-detalles-curso" style="border-left: 5px solid #f39c12;">
+                <h3>📧 ¿Necesitas una clase en vivo?</h3>
+                <p>Escríbenos a <a href="mailto:tutorias@mathgo.com" style="color: var(--azul-medio);">tutorias@mathgo.com</a> para agendar tu sesión.</p>
+            </div>
+
+            <h2 class="titulo-seccion-videos">Contenido del Curso</h2>
+            
+            <!-- Aquí el backend inyectará la lista de videos -->
+            <article class="cuadro-detalles-curso">
+                <h3>Clase 1 de ejemplo</h3>
+                <p>Este es el espacio donde el backend mostrará los videos reales de la base de datos.</p>
+                <div class="simulador-video">
+                    <h2 class="play-icon">▶</h2>
+                    <span class="video-duracion">Duración: 30:00 min</span>
+                </div>
+            </article>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>MathGo, plataforma matemática digital. Todos los derechos reservados ®.</p>
+    </footer>
+    
+  
+    <script src="../script.js"></script>
+</body>
+</html>
