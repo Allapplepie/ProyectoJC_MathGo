@@ -1,65 +1,102 @@
-// Menú adaptable para móviles
+
 document.addEventListener("DOMContentLoaded", () => {
-    const boton = document.getElementById("hamburger-boton");
+
+    // =================================
+    // 1. MENÚ DE NAVEGACIÓN
+    // =================================
+
+    const botonMenu = document.getElementById("hamburger-boton");
     const navegacion = document.getElementById("navegacion-principal");
 
-    if (!boton || !navegacion) return;
+    if (botonMenu && navegacion) {
+        botonMenu.addEventListener("click", () => {
+            const abierto = navegacion.classList.toggle("abierto");
 
-    boton.addEventListener("click", () => {
-        const abierto = navegacion.classList.toggle("abierto");
-        boton.setAttribute("aria-expanded", String(abierto));
-        boton.setAttribute("aria-label", abierto ? "Cerrar menú" : "Abrir menú");
-    });
-});
+            botonMenu.setAttribute("aria-expanded", String(abierto));
+            botonMenu.setAttribute(
+                "aria-label",
+                abierto ? "Cerrar menú" : "Abrir menú"
+            );
+        });
+    }
 
-document.addEventListener("DOMContentLoaded", () => {
-    // Buscamos el formulario de reserva en la página actual
+
+    // =================================
+    // 2. FORMULARIO DE RESERVA
+    // =================================
+
     const formularioReserva = document.getElementById("formulario-reserva");
 
-    // Si el formulario existe (porque estamos en una página de curso), activamos el evento
     if (formularioReserva) {
-        formularioReserva.addEventListener("submit", function(evento) {
-            // Evitamos que la página se recargue
+        const campoNombre = formularioReserva.querySelector("#nombre");
+
+        formularioReserva.addEventListener("submit", (evento) => {
             evento.preventDefault();
 
-            // Capturamos el nombre del estudiante
-            const nombreEstudiante = document.getElementById("nombre").value;
+            const nombre = campoNombre?.value.trim();
 
-            // Mostramos la alerta de confirmación
-            alert(`¡Hola ${nombreEstudiante}!\n\nTu solicitud para el curso ha sido recibida exitosamente. Pronto nos comunicaremos contigo.`);
+            if (!nombre) {
+                alert("Por favor, escribe tu nombre.");
+                campoNombre?.focus();
+                return;
+            }
 
-            // Limpiamos el formulario
+            alert(
+                `¡Hola ${nombre}!\n\n` +
+                "Tu solicitud para el curso ha sido recibida exitosamente. " +
+                "Pronto nos comunicaremos contigo."
+            );
+
             formularioReserva.reset();
         });
     }
-});
 
-//animacion de tarjetas
-const tarjetasAnimadas = document.querySelectorAll('.tarjeta-recursos');
-if (tarjetasAnimadas.length > 0) {
+
+    // =================================
+    // 3. ANIMACIÓN DE TARJETAS
+    // =================================
+
+    const tarjetasAnimadas = document.querySelectorAll(".tarjeta-recursos");
+
     tarjetasAnimadas.forEach((tarjeta, index) => {
-        tarjeta.classList.add('animar-entrada');
+        tarjeta.classList.add("animar-entrada");
+
         tarjeta.style.animationDelay = `${index * 0.1}s`;
     });
-}
 
-//buscador de videos
-const buscadorVideos = document.getElementById("buscador-videos");
 
-if (buscadorVideos) {
-    buscadorVideos.addEventListener("keyup", (e) => {
-        const textoBusqueda = e.target.value.toLowerCase();
+    // =================================
+    // 4. BUSCADOR DE VIDEOS
+    // =================================
+
+    const buscadorVideos = document.getElementById("buscador-videos");
+
+    if (buscadorVideos) {
+
         const tarjetas = document.querySelectorAll(".tarjeta-recurso-link");
 
-        tarjetas.forEach((tarjeta) => {
-            const titulo = tarjeta.querySelector("h2").innerText.toLowerCase();
-            const descripcion = tarjeta.querySelector("p").innerText.toLowerCase();
+        // Normalizar texto para ignorar mayúsculas y tildes
+        const normalizarTexto = (texto) => {
+            return texto
+                .toLocaleLowerCase("es")
+                .normalize("NFD")
+                .replace(/[\u0300-\u036f]/g, "")
+                .trim();
+        };
 
-            if (titulo.includes(textoBusqueda) || descripcion.includes(textoBusqueda)) {
-                tarjeta.style.display = "block";
-            } else {
-                tarjeta.style.display = "none";
-            }
+        buscadorVideos.addEventListener("input", () => {
+
+            const textoBusqueda = normalizarTexto(buscadorVideos.value);
+
+            tarjetas.forEach((tarjeta) => {
+
+                const contenido = normalizarTexto(tarjeta.textContent || "");
+
+                const coincide = contenido.includes(textoBusqueda);
+
+                tarjeta.style.display = coincide ? "" : "none";
+            });
         });
-    });
-}
+    }
+
+});
