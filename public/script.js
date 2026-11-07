@@ -1,9 +1,9 @@
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    // =================================
+  
     // 1. MENÚ DE NAVEGACIÓN
-    // =================================
+
 
     const botonMenu = document.getElementById("hamburger-boton");
     const navegacion = document.getElementById("navegacion-principal");
@@ -20,11 +20,8 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-
-    // =================================
     // 2. FORMULARIO DE RESERVA
-    // =================================
-
+ 
     const formularioReserva = document.getElementById("formulario-reserva");
 
     if (formularioReserva) {
@@ -50,11 +47,8 @@ document.addEventListener("DOMContentLoaded", () => {
             formularioReserva.reset();
         });
     }
-
-
-    // =================================
     // 3. ANIMACIÓN DE TARJETAS
-    // =================================
+   
 
     const tarjetasAnimadas = document.querySelectorAll(".tarjeta-recursos");
 
@@ -63,11 +57,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
         tarjeta.style.animationDelay = `${index * 0.1}s`;
     });
-
-
-    // =================================
+   
     // 4. BUSCADOR DE VIDEOS
-    // =================================
+  
 
     const buscadorVideos = document.getElementById("buscador-videos");
 
