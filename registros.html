@@ -1,0 +1,134 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrarse - MathGo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header class="encabezado">
+        <a class="logo" href="index.html">
+            <span class="logo-texto">MathGo</span>
+        </a>
+
+        <nav class="navegacion">
+            <a href="index.html">Inicio</a>
+            <a href="programas.html">Lista de programas</a>
+            <a href="recursos.html">Recursos</a>
+            <a href="login.html">Iniciar sesión</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="contenedor-login">
+            <h1>Crear cuenta</h1>
+            <p>Únete a MathGo y comienza a aprender matemáticas.</p>
+
+            <form id="formulario-registro">
+                <fieldset>
+                    <legend>Datos personales</legend>
+
+                    <label for="nombre">Nombre completo:</label>
+                    <input
+                        type="text"
+                        id="nombre"
+                        required
+                        minlength="2"
+                        placeholder="Tu nombre"
+                    >
+
+                    <label for="correo">Correo electrónico:</label>
+                    <input
+                        type="email"
+                        id="correo"
+                        required
+                        placeholder="correo@ejemplo.com"
+                    >
+
+                    <label for="contrasena">Contraseña:</label>
+                    <input
+                        type="password"
+                        id="contrasena"
+                        required
+                        minlength="8"
+                        placeholder="Mínimo 8 caracteres"
+                    >
+
+                    <button type="submit"
+                        class="boton-ver-recursos btn-formulario">
+                        Crear cuenta
+                    </button>
+                </fieldset>
+            </form>
+
+            <p id="mensaje-registro" role="status"></p>
+
+            <p style="text-align:center; margin-top:20px;">
+                ¿Ya tienes cuenta?
+                <a href="login.html">Inicia sesión</a>
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>MathGo, plataforma matemática digital. Todos los derechos reservados ®.</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <script>
+        const formularioRegistro =
+            document.getElementById("formulario-registro");
+
+        formularioRegistro.addEventListener("submit", async (evento) => {
+            evento.preventDefault();
+
+            const nombre = document.getElementById("nombre").value.trim();
+            const correo = document.getElementById("correo").value.trim();
+            const contraseña = document.getElementById("contrasena").value;
+            const mensaje = document.getElementById("mensaje-registro");
+
+            mensaje.textContent = "Registrando usuario...";
+
+            try {
+                const respuesta = await fetch(
+                    "http://localhost:3000/api/usuarios/registro",
+                    {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify({
+                            nombre,
+                            correo,
+                            contraseña
+                        })  
+                    }
+                );
+
+                const datos = await respuesta.json();
+
+                if (!respuesta.ok) {
+                    mensaje.textContent = datos.mensaje ||  
+                        "No se pudo completar el registro.";
+                    return;
+                }
+
+                mensaje.textContent =
+                    "¡Cuenta creada correctamente! Ahora puedes iniciar sesión.";
+
+                formularioRegistro.reset();
+
+            } catch (error) {
+                mensaje.textContent =
+                    "No se pudo conectar con el servidor.";
+                console.error(error);
+            }
+        });
+    </script>
+
+</body>
+</html>
