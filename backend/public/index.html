@@ -30,11 +30,11 @@
 
     <div class="usuario">
         <div class="usuario">
-    <a href="login.html" class="nombreDeUsuario">
+    <a href="login.html" id="btn-perfil" class="nombreDeUsuario">
         Hola, visitante (Ingresar)
     </a>
 </div>
-    </div>
+</div>
 </header>
 <main>
     <section id="bienvenida">
@@ -163,15 +163,15 @@
             <li><a href="tel:+573024800695">+57 302 480 0695</a></li>
         </ul>
 
-        <form action="#" method="post">
+        <form action="#" method="post" id="formulario-contacto">
             <fieldset>
                 <legend>Solicitudes</legend>
 
                 <label for="nombre">Nombre completo:</label>
-                <input id="nombre" name="nombre" type="text" autocomplete="name" required>
+                <input id="nombre-contacto" name="nombre" type="text" autocomplete="name" required>
 
                 <label for="correo">Correo:</label>
-                <input id="correo" name="correo" type="email" autocomplete="email" required>
+                <input id="correo-contacto" name="correo" type="email" autocomplete="email" required>
 
                 <label for="edad">Edad del estudiante:</label>
                 <input id="edad" name="edad" type="number" min="3" max="100" required>

@@ -3,6 +3,8 @@ const express = require("express");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const Usuario = require("../models/usuario");
+const Reserva = require('../models/Reserva'); 
+const Mensaje = require('../models/Mensaje');
 
 const router = express.Router();
 
@@ -115,5 +117,34 @@ router.post("/login", async (req, res) => {
         });
     }
 });
+//Reservas de cursos
+router.post("/reserva", async (req, res) => {
+    try {
+        const { nombre, email, telefono } = req.body;
+        
+        const nuevaReserva = new Reserva({ nombre, email, telefono });
+        await nuevaReserva.save();
+        
+        res.status(201).json({ mensaje: "¡Reserva guardada correctamente!" });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ mensaje: "Error al guardar la reserva" });
+    }
+});  
 
+// Ruta para guardar un mensaje de contacto
+router.post("/contacto", async (req, res) => {
+    try {
+        // Recibimos todos los campos nuevos
+        const { nombre, email, edad, curso, mensaje } = req.body;
+
+        const nuevoMensaje = new Mensaje({ nombre, email, edad, curso, mensaje });
+        await nuevoMensaje.save();
+
+        res.status(201).json({ mensaje: "¡Mensaje recibido con éxito!" });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ mensaje: "Error al enviar el mensaje" });
+    }
+});
 module.exports = router;

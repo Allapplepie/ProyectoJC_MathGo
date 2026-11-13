@@ -28,7 +28,7 @@
         </nav>
 
         <div class="usuario">
-            <a href="login.html" class="nombreDeUsuario">
+            <a href="login.html" id="btn-perfil" class="nombreDeUsuario">
                 Hola, visitante (Ingresar)
             </a>
         </div>
@@ -123,14 +123,19 @@
                     return;
                 }
 
-                sessionStorage.setItem("tokenMathGo", datos.token);
-                sessionStorage.setItem("usuarioMathGo",
-                    JSON.stringify(datos.usuario));
+                localStorage.setItem("tokenMathGo", datos.token);
+                localStorage.setItem("usuarioMathGo", JSON.stringify(datos.usuario));
+
+                mensaje.textContent = "¡Bienvenido a MathGo, " + datos.usuario.nombre + "!";
 
                 mensaje.textContent =
                     "¡Bienvenido a MathGo, " + datos.usuario.nombre + "!";
 
                 formulario.reset();
+
+                setTimeout(() => {
+                    window.location.href = "subscripciones.html";
+                }, 1500);
 
             } catch (error) {
                 mensaje.textContent =

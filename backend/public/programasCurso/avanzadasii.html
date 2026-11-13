@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Refuerzo personalizado - MathGo</title>
+    <title>Matemáticas avanzadas II - MathGo</title>
     <link rel="stylesheet" href="../styles.css"> 
 </head>
 <body>
@@ -23,7 +23,7 @@
         </nav>
         <div class="usuario">
             <div class="usuario">
-    <a href="../login.html" class="nombreDeUsuario">
+    <a href="../login.html" id="btn-perfil" class="nombreDeUsuario">
         Hola, visitante (Ingresar)
     </a>
 </div>
@@ -31,33 +31,35 @@
     </header>
 
     <main>
-        <div class="contenedor-volver">
+          <div class="contenedor-volver">
+          
             <a href="../programas.html" class="enlace-volver">← Volver a la lista de programas</a>
         </div>
 
         <section aria-labelledby="titulo-curso">
-            <h1 id="titulo-curso">Refuerzo personalizado</h1>
+            <h1 id="titulo-curso">Matemáticas avanzadas II</h1>
             
             <div class="cuadro-detalles-curso">
                 <h2>Detalles del Curso</h2>
                 <ul>
-                    <li><strong>Duración:</strong> 4 semanas (8 sesiones de 1 hora).</li>
-                    <li><strong>Modalidad:</strong> 100% Online (Clases en vivo vía Zoom).</li>
-                    <li><strong>Nivel:</strong> Adaptable a todos los niveles.</li>
-                    <li><strong>Precio:</strong> $122.000 COP.</li>
-                    <li><strong>Incluye:</strong> Material didáctico digital, ejercicios prácticos y certificado de asistencia.</li>
+                    <li><strong>Duración:</strong> 12 semanas (24 sesiones de 2 horas).</li>
+                    <li><strong>Modalidad:</strong> Clases virtuales en vivo + laboratorios de software matemático.</li>
+                    <li><strong>Nivel:</strong> Superior / Universitario (Cálculo Multivariable y E.D.).</li>
+                    <li><strong>Precio:</strong> $350.000 COP.</li>
+                    <li><strong>Incluye:</strong> Acceso a MATLAB/GeoGebra, simulacros de examen de admisión a posgrado, material bibliográfico en PDF y asesoría de tesis/proyectos.</li>
                 </ul>
             </div>
 
             <div>
                 <h2>Descripción del programa</h2>
-                <p>Acompañamiento enfocado en las dudas y necesidades de cada estudiante. Este curso está diseñado para aquellos que necesitan un empujón extra en sus estudios matemáticos. Adaptamos el ritmo y los ejercicios según lo que necesites reforzar para tus exámenes o tareas diarias.</p>
+                <p>Se centra en el aprendizaje y aplicación de teorías matemáticas de altísima complejidad. Este curso está diseñado para estudiantes de ingeniería, ciencias exactas o carreras afines que necesiten dominar herramientas matemáticas avanzadas para resolver problemas del mundo real, modelado de sistemas y análisis teórico profundo.</p>
                 
                 <h2>¿Qué aprenderás?</h2>
                 <ul>
-                    <li>Resolución de dudas específicas de tus clases regulares.</li>
-                    <li>Técnicas de estudio y organización matemática.</li>
-                    <li>Preparación para evaluaciones próximas.</li>
+                    <li>Cálculo multivariable (derivadas parciales, integrales múltiples).</li>
+                    <li>Ecuaciones diferenciales ordinarias y transformadas de Laplace.</li>
+                    <li>Álgebra lineal avanzada (valores propios, espacios vectoriales).</li>
+                    <li>Modelado matemático de fenómenos físicos y económicos.</li>
                 </ul>
             </div>
 
@@ -68,11 +70,14 @@
                     <fieldset>
                         <legend>Datos del estudiante</legend>
                         <label for="nombre">Nombre completo:</label>
-                        <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre aquí">
+                        <input type="text" id="nombre-reserva" name="nombre" required placeholder="Tu nombre aquí">
+                        
                         <label for="email">Correo electrónico:</label>
-                        <input type="email" id="email" name="email" required placeholder="correo@ejemplo.com">
+                        <input type="email" id="email-reserva" name="email" required placeholder="correo@ejemplo.com">
+                        
                         <label for="telefono">Teléfono de contacto:</label>
-                        <input type="tel" id="telefono" name="telefono" required placeholder="Ej: +57 300 123 4567">
+                        <input type="tel" id="telefono-reserva" name="telefono" required placeholder="Ej: +57 300 123 4567">
+                        
                         <button type="submit" class="boton-ver-recursos" style="margin-top: 15px;">Solicitar Reserva</button>
                     </fieldset>
                 </form>
@@ -83,6 +88,8 @@
     <footer>
         <p>MathGo, plataforma matemática digital. Todos los derechos reservados ®.</p>
     </footer>
+    
+   
     <script src="../script.js"></script>
 </body>
 </html>

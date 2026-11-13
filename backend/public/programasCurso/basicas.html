@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Matemáticas avanzadas - MathGo</title>
+    <title>Matemáticas básicas - MathGo</title>
     <link rel="stylesheet" href="../styles.css"> 
 </head>
 <body>
@@ -23,7 +23,7 @@
         </nav>
         <div class="usuario">
             <div class="usuario">
-    <a href="../login.html" class="nombreDeUsuario">
+    <a href="../login.html" id="btn-perfil" class="nombreDeUsuario">
         Hola, visitante (Ingresar)
     </a>
 </div>
@@ -36,28 +36,28 @@
         </div>
 
         <section aria-labelledby="titulo-curso">
-            <h1 id="titulo-curso">Matemáticas avanzadas (nivel 3)</h1>
+            <h1 id="titulo-curso">Matemáticas básicas (nivel 2)</h1>
             
             <div class="cuadro-detalles-curso">
                 <h2>Detalles del Curso</h2>
                 <ul>
-                    <li><strong>Duración:</strong> 10 semanas (20 sesiones de 1.5 horas).</li>
-                    <li><strong>Modalidad:</strong> Clases virtuales en vivo (Nivel universitario).</li>
-                    <li><strong>Nivel:</strong> Avanzado.</li>
-                    <li><strong>Precio:</strong> $350.000 COP.</li>
-                    <li><strong>Incluye:</strong> Software especializado (GeoGebra/Matlab), biblioteca virtual y asesoría para proyectos.</li>
+                    <li><strong>Duración:</strong> 8 semanas (16 sesiones de 1 hora).</li>
+                    <li><strong>Modalidad:</strong> Clases virtuales en vivo (grupos reducidos).</li>
+                    <li><strong>Nivel:</strong> Intermedio.</li>
+                    <li><strong>Precio:</strong> $200.000 COP.</li>
+                    <li><strong>Incluye:</strong> Simulacros de examen, tutorías personalizadas 1 vez al mes y material físico (PDF).</li>
                 </ul>
             </div>
 
             <div>
                 <h2>Descripción del programa</h2>
-                <p>Profundiza en temas matemáticos de mayor complejidad. Este curso está dirigido a estudiantes que desean dominar conceptos como cálculo, álgebra lineal o trigonometría avanzada, preparándolos para entornos universitarios o profesionales exigentes.</p>
+                <p>Practica operaciones y desarrolla habilidades para resolver problemas. Este curso está enfocado en la resolución de problemas cotidianos y académicos, enseñándote a identificar qué operación usar, cómo plantear ecuaciones y cómo verificar tus resultados de manera eficiente.</p>
                 
                 <h2>¿Qué aprenderás?</h2>
                 <ul>
-                    <li>Límites, derivadas e integrales (Cálculo I y II).</li>
-                    <li>Matrices, determinantes y sistemas de ecuaciones.</li>
-                    <li>Resolución de problemas de alta complejidad y demostraciones matemáticas.</li>
+                    <li>Planteamiento y resolución de problemas matemáticos.</li>
+                    <li>Regla de tres, porcentajes y proporciones.</li>
+                    <li>Introducción a la estadística y probabilidad básica.</li>
                 </ul>
             </div>
 
@@ -65,14 +65,14 @@
                 <h2>Solicitar o Reservar Curso</h2>
                 <p>Déjanos tus datos y nos pondremos en contacto contigo para concretar el pago y los horarios.</p>
                 <form action="#" method="POST" id="formulario-reserva">
-                    <fieldset>
+                   <fieldset>
                         <legend>Datos del estudiante</legend>
                         <label for="nombre">Nombre completo:</label>
-                        <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre aquí">
+                        <input type="text" id="nombre-reserva" name="nombre" required placeholder="Tu nombre aquí">
                         <label for="email">Correo electrónico:</label>
-                        <input type="email" id="email" name="email" required placeholder="correo@ejemplo.com">
+                        <input type="email" id="email-reserva" name="email" required placeholder="correo@ejemplo.com">
                         <label for="telefono">Teléfono de contacto:</label>
-                        <input type="tel" id="telefono" name="telefono" required placeholder="Ej: +57 300 123 4567">
+                        <input type="tel" id="telefono-reserva" name="telefono" required placeholder="Ej: +57 300 123 4567">
                         <button type="submit" class="boton-ver-recursos" style="margin-top: 15px;">Solicitar Reserva</button>
                     </fieldset>
                 </form>

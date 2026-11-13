@@ -9,6 +9,7 @@ const app = express();
 // Middlewares
 app.use(cors());
 app.use(express.json());
+app.use(express.static("public"));
 
 //ruta de usuarios
 app.use("/api/usuarios",require("./routes/usuario"));
