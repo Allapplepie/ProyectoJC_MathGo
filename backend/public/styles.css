@@ -236,6 +236,27 @@ img {
     margin-top: 15px;
 }
 
+/* --- Estilos para el Acordeón de FAQ --- */
+.faq-item {
+    margin-bottom: 15px; /* Separación entre preguntas */
+    cursor: pointer; /* Que salga la manito al pasar el mouse */
+}
+
+.faq-pregunta {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: var(--azul-medio, #0056b3); /* Usa tu color de marca */
+    outline: none; /* Quita el borde feo al hacer clic */
+}
+
+.faq-respuesta {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid var(--borde, #eee);
+    color: var(--texto, #333);
+    line-height: 1.6;
+}
+
 /*css de la biblioteca de videos*/
 
 .titulo-seccion-videos {

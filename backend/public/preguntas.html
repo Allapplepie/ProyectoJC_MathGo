@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preguntas Frecuentes - MathGo</title>
+    <link rel="stylesheet" href="styles.css"> 
+</head>
+<body>
+
+   
+    <header class="encabezado">
+        <a class="logo" href="index.html" aria-label="MathGo, página de inicio">
+            <span class="logo-texto">MathGo</span>
+        </a>
+        <button class="menuHamburger" id="hamburger-boton" type="button" aria-label="Abrir menú" aria-controls="navegacion-principal" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+        <nav class="navegacion" id="navegacion-principal" aria-label="Navegación principal">
+            <a href="index.html">Inicio</a>
+            <a href="programas.html">Lista de programas</a>
+            <a href="recursos.html">Recursos</a>
+
+<a href="preguntas.html">Dudas</a>
+            <a href="subscripciones.html">Mis suscripciones</a>
+        </nav>
+        <div class="usuario">
+            <!-- Mantenemos el ID para que tu script.js lo reconozca -->
+            <a href="#" id="btn-perfil" class="nombreDeUsuario">Cargando...</a>
+        </div>
+    </header>
+
+    <main>
+        <section aria-labelledby="titulo-faq">
+            <h1 id="titulo-faq" style="text-align: center; margin-top: 30px;">Preguntas Frecuentes</h1>
+            <p style="text-align: center; margin-bottom: 30px;">Resolvemos tus dudas sobre los cursos y la plataforma.</p>
+
+            <!-- CONTENEDOR PRINCIPAL DE LAS PREGUNTAS -->
+            <div class="contenedor-faq">
+                
+                <!-- PREGUNTA 1 -->
+                <details class="cuadro-detalles-curso faq-item">
+                    <summary class="faq-pregunta">¿Cómo puedo inscribirme en un curso?</summary>
+                    <p class="faq-respuesta">Solo debes ir a la sección "Lista de programas", elegir el curso de tu interés y llenar el formulario de reserva. Nosotros nos pondremos en contacto contigo para concretar el pago y darte acceso a las aulas.</p>
+                </details>
+
+                <!-- PREGUNTA 2 -->
+                <details class="cuadro-detalles-curso faq-item">
+                    <summary class="faq-pregunta">¿Las clases son en vivo o grabadas?</summary>
+                    <p class="faq-respuesta">La plataforma cuenta con una Videoteca con clases grabadas para que repases a tu ritmo. Además, las sesiones de refuerzo personalizadas y algunas tutorías se agendan en vivo directamente con el tutor a través de nuestro correo de contacto.</p>
+                </details>
+
+                <!-- PREGUNTA 3 -->
+                <details class="cuadro-detalles-curso faq-item">
+                    <summary class="faq-pregunta">¿Necesito tener conocimientos previos?</summary>
+                    <p class="faq-respuesta">Depende del curso. En la página de cada programa especificamos el nivel (Básico, Intermedio o Avanzado). Si no estás seguro, te recomendamos empezar por "Fundamentos de matemáticas" para fortalecer tus bases.</p>
+                </details>
+
+                <!-- PREGUNTA 4 -->
+                <details class="cuadro-detalles-curso faq-item">
+                    <summary class="faq-pregunta">¿Cómo accedo a mis cursos después de comprarlos?</summary>
+                    <p class="faq-respuesta">Una vez que inicies sesión con la cuenta que creaste, el botón de tu perfil (arriba a la derecha) cambiará a "Hola, [Tu Nombre]". Si haces clic allí, podrás ir a "Mis Cursos" y entrar directamente a las aulas virtuales.</p>
+                </details>
+
+                <!-- PREGUNTA 5 -->
+                <details class="cuadro-detalles-curso faq-item">
+                    <summary class="faq-pregunta">¿Qué pasa si tengo problemas técnicos?</summary>
+                    <p class="faq-respuesta">Puedes escribirnos desde el formulario de contacto en la página de inicio, o enviarnos un correo directo. Nuestro equipo técnico está disponible para ayudarte con cualquier problema de acceso o visualización de videos.</p>
+                </details>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>MathGo, plataforma matemática digital. Todos los derechos reservados ®.</p>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>
