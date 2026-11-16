@@ -1,0 +1,627 @@
+/* ==========================================
+   MATHGO - estilos compartidos
+   Paleta: #d3e9f0 #76bcf5 #5889b2 #69d6cc
+   ========================================== */
+
+:root {
+    --azul-claro: #d3e9f0;
+    --azul: #76bcf5;
+    --azul-medio: #5889b2;
+    --turquesa: #69d6cc;
+    --texto: #183247;
+    --blanco: #ffffff;
+    --superficie: #f8fcfd;
+    --borde: #c2dce8;
+    --sombra: 0 8px 24px rgba(47, 103, 143, 0.12);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: var(--azul-claro);
+    color: var(--texto);
+    font-family: "Segoe UI", Arial, sans-serif;
+    line-height: 1.6;
+}
+#fondo-programas,
+#fondo-subscripciones{
+background:linear-gradient(to bottom, var(--azul-claro),var(--azul-medio));
+
+}
+
+/* Barra superior y navegación */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 14px clamp(18px, 5vw, 64px);
+    background:linear-gradient(to bottom right, var(--azul) 0%, var(--azul-claro) 40%,var(--blanco) 100%);
+    /*background: var(--blanco);*/
+    border-bottom: 3px solid var(--turquesa);
+    box-shadow: 0 4px 18px rgba(24, 50, 71, 0.08);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.logo img {
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+}
+
+.logo p {
+    margin: 0;
+    color: var(--azul-medio);
+    font-size: 1.65rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.navegacion {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.navegacion a {
+    display: inline-block;
+    padding: 10px 14px;
+    color: var(--texto);
+    text-decoration: none;
+    font-weight: 650;
+    border-radius: 10px;
+    transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.navegacion a:hover,
+.navegacion a:focus-visible {
+    background: var(--azul-claro);
+    color: #24577f;
+    transform: translateY(-1px);
+    outline: none;
+}
+
+.usuario {
+    flex-shrink: 0;
+    padding: 9px 13px;
+    background: var(--azul-claro);
+    border-radius: 999px;
+    color: #24577f;
+    font-weight: 650;
+}
+.nombreDeUsuario {
+    text-decoration: none;
+    color: var(--texto);
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.nombreDeUsuario:hover {
+    background-color: var(--azul-claro);
+    color: var(--azul-medio);
+}
+
+/* Botón de menú para pantallas pequeñas */
+.menuHamburger {
+    display: none;
+    width: 44px;
+    height: 42px;
+    padding: 9px;
+    background: var(--azul-medio);
+    border: 0;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.menuHamburger span {
+    display: block;
+    height: 3px;
+    margin: 4px 0;
+    background: var(--blanco);
+    border-radius: 3px;
+}
+
+/* Contenido general */
+main {
+    width: min(1180px, 92%);
+    margin: 36px auto;
+}
+
+section {
+    margin: 0 0 38px;
+    padding: clamp(20px, 4vw, 38px);
+    background: var(--superficie);
+    border: 1px solid rgba(88, 137, 178, 0.22);
+    border-radius: 22px;
+    box-shadow: var(--sombra);
+}
+
+h1, h2, h3, h4 {
+    line-height: 1.2;
+    color: #315f83;
+}
+
+h1 {
+    margin-top: 0;
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    text-align: center;
+}
+
+h2 {
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    text-align: center;
+}
+
+p {
+    overflow-wrap: anywhere;
+    text-align: center;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+#bienvenida {
+    background: linear-gradient(135deg, var(--texto) 0%, var(--azul) 100%);
+    color: var(--blanco);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 100px;
+}
+
+#bienvenida h1, 
+#bienvenida h2, 
+#bienvenida h3, 
+#bienvenida h4 {
+    color: var(--blanco);
+    text-align: center;
+}
+/*css pagina de los diferentes cursos*/
+.contenedor-volver {
+    margin-bottom: 20px;
+}
+
+.enlace-volver {
+    color: var(--azul-medio);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.enlace-volver:hover {
+    text-decoration: underline;
+}
+
+
+.cuadro-detalles-curso {
+    background-color: var(--azul-claro);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    border-left: 5px solid var(--azul-medio);
+}
+
+.cuadro-detalles-curso h2 {
+    margin-top: 0;
+}
+
+
+.contenedor-formulario-curso {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 2px solid var(--azul-medio);
+}
+
+
+.btn-formulario {
+    margin-top: 15px;
+}
+
+/* --- Estilos para el Acordeón de FAQ --- */
+.faq-item {
+    margin-bottom: 15px; /* Separación entre preguntas */
+    cursor: pointer; /* Que salga la manito al pasar el mouse */
+}
+
+.faq-pregunta {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: var(--azul-medio, #0056b3); /* Usa tu color de marca */
+    outline: none; /* Quita el borde feo al hacer clic */
+}
+
+.faq-respuesta {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid var(--borde, #eee);
+    color: var(--texto, #333);
+    line-height: 1.6;
+}
+
+/*css de la biblioteca de videos*/
+
+.titulo-seccion-videos {
+    color: var(--azul-medio); 
+    margin-top: 40px; 
+    border-bottom: 2px solid var(--azul-claro); 
+    padding-bottom: 10px;
+}
+
+/* simulador css */
+.simulador-video {
+    background-color: #000; 
+    border-radius: 10px; 
+    height: 250px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    color: white; 
+    margin-top: 15px; 
+    position: relative; 
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.simulador-video:hover {
+    transform: scale(1.02); 
+}
+
+/* El botón de Play */
+.play-icon {
+    margin: 0; 
+    font-size: 4rem;
+}
+
+/* El texto de la duración abajo a la izquierda */
+.video-duracion {
+    position: absolute; 
+    bottom: 15px; 
+    left: 20px; 
+    font-size: 0.9rem;
+}
+
+.contenedor-buscador {
+    margin: 20px 0 30px 0;
+    display: flex;
+    justify-content: center; /* Centra el buscador horizontalmente */
+    width: 100%;
+}
+
+#buscador-videos {
+    width: 100%;
+    max-width: 500px; /* Aquí limitamos su ancho máximo */
+    padding: 12px 20px;
+    border: 2px solid var(--borde);
+    border-radius: 25px;
+    font-family: inherit;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+#buscador-videos:focus {
+    border-color: var(--azul-medio);
+}
+/* Tarjetas: cursos, recursos y motivos */
+.contenedor-de-cursos,
+.contenedor-curso,
+.contenedor-de-recursos,
+.cajas-de-motivos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 22px;
+    align-items: stretch;
+}
+
+.tarjeta-curso,
+.contenedor-curso,
+.tarjeta-recursos,
+.cajas,
+.contenedor-de-recursos > div {
+    min-width: 0;
+    padding: 18px;
+    overflow: hidden;
+    background: var(--blanco);
+    border: 1px solid var(--borde);
+    border-radius: 18px;
+    box-shadow: 0 5px 16px rgba(47, 103, 143, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    text-decoration: none;
+    text-align: center;
+}
+
+.tarjeta-curso:hover,
+.contenedor-curso:hover,
+.tarjeta-recursos:hover,
+.cajas:hover,
+.contenedor-de-recursos > div:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--sombra);
+}
+
+.contenedor-de-cursos img,
+.contenedor-de-recursos img,
+.cajas img {
+    display: block;
+    width: 100%;
+    max-height: 220px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+
+
+#sobreNosotros img {
+    display: block;
+    width: min(100%, 600px);
+    margin: 20px auto 0;
+    border-radius: 16px;
+}
+
+/* Botones y enlaces tipo botón */
+button,
+.boton-compra,
+.boton-ver-recursos,
+input[type="submit"] {
+    display: inline-block;
+    padding: 12px 20px;
+    background: var(--azul-medio);
+    color: var(--blanco);
+    border: 0;
+    border-radius: 10px;
+    font: inherit;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+button:hover,
+.boton-compra:hover,
+.boton-ver-recursos:hover,
+input[type="submit"]:hover {
+    background: #3e719b;
+    transform: translateY(-1px);
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+    outline: 3px solid var(--turquesa);
+    outline-offset: 3px;
+}
+
+a.tarjeta-recurso-link {
+    text-decoration: none !important; 
+    color: inherit !important; 
+    display: block;
+}
+
+/* emojis más grandes */
+.icono-recurso {
+    font-size: 3.5rem;
+    display: block;
+    margin-bottom: 15px;
+    line-height: 1; 
+}
+
+/*menu del usuario*/
+.user-menu-container {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-menu {
+    display: none; /* Oculto por defecto */
+    position: absolute;
+    right: 0;
+    top: 120%; /* Aparece un poquito más abajo del nombre */
+    background-color: var(--blanco, #ffffff);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.15);
+    border-radius: 8px;
+    z-index: 1000;
+    overflow: hidden;
+    border: 1px solid var(--borde, #ccc);
+}
+
+/* Esta clase la activa el JavaScript al hacer clic */
+.dropdown-menu.show {
+    display: block; 
+}
+
+.dropdown-menu a {
+    color: var(--texto, #333);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+.dropdown-menu a:hover {
+    background-color: var(--azul-claro, #f1f1f1);
+    color: var(--azul-medio, #0056b3);
+}
+
+/* Estilos para la página de suscripciones */
+.mensaje-estado {
+    text-align: center;
+    margin-top: 50px;
+    color: var(--texto, #333);
+}
+
+.mensaje-error {
+    text-align: center;
+    margin-top: 50px;
+    color: #e74c3c; /* Rojo para errores */
+}
+
+.estado-activo {
+    color: #27ae60; /* Verde para el estado activo */
+}
+
+/* Formularios */
+form {
+    max-width: 720px;
+    margin: 22px auto 0;
+}
+
+fieldset {
+    display: grid;
+    gap: 14px;
+    padding: 22px;
+    border: 2px solid var(--azul);
+    border-radius: 16px;
+}
+
+legend {
+    padding: 0 8px;
+    color: #315f83;
+    font-weight: 800;
+}
+
+label {
+    display: block;
+    margin: 7px 0;
+}
+
+input:not([type="radio"]):not([type="checkbox"]),
+textarea,
+select {
+    display: block;
+    width: 100%;
+    margin-top: 6px;
+    padding: 12px 14px;
+    color: var(--texto);
+    background: var(--blanco);
+    border: 1px solid #a9c9dd;
+    border-radius: 10px;
+    font: inherit;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    accent-color: var(--azul-medio);
+}
+
+textarea {
+    min-height: 110px;
+    resize: vertical;
+}
+
+/* Pie de página */
+footer {
+    padding: 24px;
+    background: var(--texto);
+    color: var(--blanco);
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* animacion tarjetas*/
+.tarjeta-recursos {
+    opacity: 1; 
+}
+
+@keyframes aparecerSuave {
+    0% {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.animar-entrada {
+    animation: aparecerSuave 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+/* Adaptación a móviles */
+@media (max-width: 850px) {
+    header {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .menuHamburger {
+        display: block;
+        margin-left: auto;
+    }
+
+    .navegacion {
+        display: none;
+        order: 3;
+        width: 100%;
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .navegacion a {
+        text-align: center;
+    }
+
+    /* Si se agrega la clase .abierto con JavaScript, aparece el menú */
+    .navegacion.abierto {
+        display: flex;
+    }
+
+    .usuario {
+        order: 2;
+    }
+
+    main {
+        width: min(100% - 24px, 1180px);
+        margin: 20px auto;
+    }
+
+    section {
+        padding: 20px;
+        border-radius: 16px;
+    }
+    
+}
+
+@media (max-width: 480px) {
+    .logo p {
+        font-size: 1.35rem;
+    }
+
+    .usuario {
+        font-size: 0.9rem;
+    }
+
+    .contenedor-de-cursos,
+    .contenedor-curso,
+    .contenedor-de-recursos,
+    .cajas-de-motivos {
+        grid-template-columns: 1fr;
+    }
+}
