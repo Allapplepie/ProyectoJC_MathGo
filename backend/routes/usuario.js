@@ -5,8 +5,8 @@ const jwt = require("jsonwebtoken");
 const Usuario = require("../models/usuario");
 const Reserva = require('../models/Reserva'); 
 const Mensaje = require('../models/Mensaje');
-
 const router = express.Router();
+const Curso = require("../models/Curso");
 
 // REGISTRO DE USUARIOS
 router.post("/registro", async (req, res) => {
@@ -145,6 +145,32 @@ router.post("/contacto", async (req, res) => {
     } catch (error) {
         console.error(error);
         res.status(500).json({ mensaje: "Error al enviar el mensaje" });
+    }
+});
+
+// Ruta para obtener los cursos del usuario logueado
+router.get("/mis-cursos", async (req, res) => {
+    try {
+        // 1. Leemos el token que envía el frontend
+        const authHeader = req.headers.authorization;
+        if (!authHeader) return res.status(401).json({ mensaje: "No has iniciado sesión" });
+
+        const token = authHeader.split(" ")[1]; 
+        
+        // 2. Verificamos el token con la palabra secreta de tu .env
+        const decoded = jwt.verify(token, process.env.JWT_SECRET);
+        
+        // 3. Buscamos al usuario en Mongo usando el ID que viene dentro del token
+        const usuario = await Usuario.findById(decoded.id || decoded.usuarioId).populate('cursosComprados');
+        
+        if (!usuario) return res.status(404).json({ mensaje: "Usuario no encontrado" });
+
+        // 4. Devolvemos los cursos
+        res.json({ exito: true, cursos: usuario.cursosComprados });
+
+    } catch (error) {
+        console.error("Error al buscar cursos:", error);
+        res.status(500).json({ mensaje: "Error interno del servidor" });
     }
 });
 module.exports = router;

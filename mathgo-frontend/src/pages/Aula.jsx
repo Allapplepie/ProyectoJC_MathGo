@@ -13,7 +13,7 @@ const Aula = () => {
             </div>
 
             <h1 className="titulo-aula">
-                Aula Virtual (Curso ID: {idCurso})
+                Aula Virtual 
             </h1>
 
             {/* Aviso de clases en vivo */}
@@ -29,7 +29,7 @@ const Aula = () => {
             
             <article className="cuadro-detalles-curso">
                 <h3>Clase 1 de ejemplo</h3>
-                <p>Este es el espacio donde el backend mostrará los videos reales de la base de datos.</p>
+                <p>Bienvenido a tu material de clase.¡ Mira la siguiente leccion para cumplir tus objetivos de aprendizaje!.</p>
                 
                 {/* Simulador de video (El cuadro negro con el Play) */}
                 <div className="simulador-video">

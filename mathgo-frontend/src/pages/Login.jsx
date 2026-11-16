@@ -77,7 +77,7 @@ const Login = () => {
             </form>
             
             <p className="texto-registro">
-                ¿No tienes cuenta? <Link to="#" className="enlace-azul">Regístrate aquí</Link>
+                ¿No tienes cuenta? <Link to="/registro" className="enlace-azul">Regístrate aquí</Link>
             </p>
         </section>
     );

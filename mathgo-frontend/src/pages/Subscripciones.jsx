@@ -17,20 +17,30 @@ const Subscripciones = () => {
                 return;
             }
 
-            try {
-                const respuesta = await fetch('http://localhost:3000/api/usuarios/mis-cursos');
-                const datos = await respuesta.json();
+           try {
+    // 1. Buscamos el token que guardó el Login
+    const token = localStorage.getItem("tokenMathGo");
 
-                if (respuesta.ok) {
-                    setCursos(datos.cursos || []); 
-                } else {
-                    setError(datos.mensaje || "Error al cargar los cursos");
-                }
-            } catch (err) {
-                setError("Error de conexión. Revisa que el servidor esté encendido.");
-            } finally {
-                setCargando(false);
-            }
+    // 2. Hacemos el fetch enviando el token en los headers
+    const respuesta = await fetch('http://localhost:3000/api/usuarios/mis-cursos', {
+        method: 'GET',
+        headers: {
+            'Authorization': `Bearer ${token}` // <-- ¡AQUÍ ESTÁ LA MAGIA!
+        }
+    });
+    
+    const datos = await respuesta.json();
+
+    if (respuesta.ok) {
+        setCursos(datos.cursos || []);
+    } else {
+        setError(datos.mensaje || "Error al cargar los cursos");
+    }
+} catch (err) {
+    setError("Error de conexión. Revisa que el servidor esté encendido.");
+} finally {
+    setCargando(false);
+}
         };
 
         cargarCursos();

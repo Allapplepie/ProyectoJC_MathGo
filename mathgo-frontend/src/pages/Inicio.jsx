@@ -1,6 +1,50 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
+
 const Inicio = () => {
+
+    // Estados para el formulario
+    const [contactoNombre, setContactoNombre] = useState('');
+    const [contactoCorreo, setContactoCorreo] = useState('');
+    const [contactoEdad, setContactoEdad] = useState('');
+    const [contactoCurso, setContactoCurso] = useState('refuerzo');
+    const [contactoMensaje, setContactoMensaje] = useState('');
+    const [estadoEnvio, setEstadoEnvio] = useState(''); // Para mensajes de éxito/error
+
+    const enviarContacto = async (e) => {
+        e.preventDefault();
+        setEstadoEnvio('Enviando...');
+        
+        try {
+            const respuesta = await fetch('http://localhost:3000/api/usuarios/contacto', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ 
+                    nombre: contactoNombre, 
+                    email: contactoCorreo, 
+                    edad: contactoEdad, 
+                    curso: contactoCurso, 
+                    mensaje: contactoMensaje 
+                })
+            });
+
+            if (respuesta.ok) {
+                setEstadoEnvio('¡Mensaje enviado con éxito! Pronto te contactaremos.');
+                setContactoNombre('');
+                setContactoCorreo('');
+                setContactoEdad('');
+                setContactoMensaje('');
+            } else {
+                setEstadoEnvio('Hubo un error al enviar el mensaje.');
+            }
+        } catch (error) {
+            setEstadoEnvio('Error de conexión. Revisa que el servidor esté encendido.');
+        }
+    };
+
+    
+
     return (
         <>
             <section id="bienvenida">
@@ -8,52 +52,52 @@ const Inicio = () => {
                 <h3>Un espacio donde el aprendizaje divertido, dinámico y rápido.</h3>
             </section>
 
-            <section id="nuestrosCursos" aria-labelledby="titulo-cursos">
-                <h1 id="titulo-cursos">Nuestros cursos</h1>
-                <div className="contenedor-de-cursos">
-                    
-                    <article className="tarjeta-curso">
-                        <img src="https://images.unsplash.com/photo-1513258496099-48168024aec0?q=80&w=400&auto=format&fit=crop" alt="Sesión de refuerzo" loading="lazy" />
-                        <h2>Sesiones de refuerzo personalizadas</h2>
-                        <p><strong>Duración:</strong> 4 semanas</p>
-                        <p><strong>Precio:</strong> $122.000</p>
-                        <Link className="boton-compra" to="/subscripciones">Reservar</Link>
-                    </article>
+           <section id="nuestrosCursos" aria-labelledby="titulo-cursos">
+    <h1 id="titulo-cursos">Nuestros cursos</h1>
+    <div className="contenedor-de-cursos">
+        
+        <article className="tarjeta-curso">
+            <img src="https://images.unsplash.com/photo-1513258496099-48168024aec0?q=80&w=400&auto=format&fit=crop" alt="Sesión de refuerzo" loading="lazy" />
+            <h2>Sesiones de refuerzo personalizadas</h2>
+            <p><strong>Duración:</strong> 4 semanas</p>
+            <p><strong>Precio:</strong> $122.000</p>
+            <Link className="boton-compra" to="/curso/refuerzo">Ver detalles</Link>
+        </article>
 
-                    <article className="tarjeta-curso">
-                        <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=400&auto=format&fit=crop" alt="Fundamentos" loading="lazy" />
-                        <h2>Fundamentos de matemáticas (nivel 1)</h2>
-                        <p><strong>Duración:</strong> 6 semanas</p>
-                        <p><strong>Precio:</strong> $150.000</p>
-                        <Link className="boton-compra" to="/subscripciones">Reservar</Link>
-                    </article>
+        <article className="tarjeta-curso">
+            <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=400&auto=format&fit=crop" alt="Fundamentos" loading="lazy" />
+            <h2>Fundamentos de matemáticas (nivel 1)</h2>
+            <p><strong>Duración:</strong> 6 semanas</p>
+            <p><strong>Precio:</strong> $150.000</p>
+            <Link className="boton-compra" to="/curso/fundamentos">Ver detalles</Link>
+        </article>
 
-                    <article className="tarjeta-curso">
-                        <img src="https://images.unsplash.com/photo-1509228468518-180dd4864904?q=80&w=400&auto=format&fit=crop" alt="Matemáticas básicas" loading="lazy" />
-                        <h2>Matemáticas básicas (nivel 2)</h2>
-                        <p><strong>Duración:</strong> 8 semanas</p>
-                        <p><strong>Precio:</strong> $200.000</p>
-                        <Link className="boton-compra" to="/subscripciones">Reservar</Link>
-                    </article>
+        <article className="tarjeta-curso">
+            <img src="https://images.unsplash.com/photo-1509228468518-180dd4864904?q=80&w=400&auto=format&fit=crop" alt="Matemáticas básicas" loading="lazy" />
+            <h2>Matemáticas básicas (nivel 2)</h2>
+            <p><strong>Duración:</strong> 8 semanas</p>
+            <p><strong>Precio:</strong> $200.000</p>
+            <Link className="boton-compra" to="/curso/basicas">Ver detalles</Link>
+        </article>
 
-                    <article className="tarjeta-curso">
-                        <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=400&auto=format&fit=crop" alt="Matemáticas avanzadas" loading="lazy" />
-                        <h2>Matemáticas avanzadas (nivel 3)</h2>
-                        <p><strong>Duración:</strong> 10 semanas</p>
-                        <p><strong>Precio:</strong> $350.000</p>
-                        <Link className="boton-compra" to="/subscripciones">Reservar</Link>
-                    </article>
+        <article className="tarjeta-curso">
+            <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=400&auto=format&fit=crop" alt="Matemáticas avanzadas" loading="lazy" />
+            <h2>Matemáticas avanzadas (nivel 3)</h2>
+            <p><strong>Duración:</strong> 10 semanas</p>
+            <p><strong>Precio:</strong> $350.000</p>
+            <Link className="boton-compra" to="/curso/avanzadas">Ver detalles</Link>
+        </article>
 
-                    <article className="tarjeta-curso">
-                        <img src="https://images.unsplash.com/photo-1596495578065-6e0763fa1178?q=80&w=400&auto=format&fit=crop" alt="Matemáticas avanzadas II" loading="lazy" />
-                        <h2>Matemáticas avanzadas II (nivel superior)</h2>
-                        <p><strong>Duración:</strong> 12 semanas</p>
-                        <p><strong>Precio:</strong> $350.000</p>
-                        <Link className="boton-compra" to="/subscripciones">Reservar</Link>
-                    </article>
+        <article className="tarjeta-curso">
+            <img src="https://images.unsplash.com/photo-1596495578065-6e0763fa1178?q=80&w=400&auto=format&fit=crop" alt="Matemáticas avanzadas II" loading="lazy" />
+            <h2>Matemáticas avanzadas II (nivel superior)</h2>
+            <p><strong>Duración:</strong> 12 semanas</p>
+            <p><strong>Precio:</strong> $350.000</p>
+            <Link className="boton-compra" to="/curso/avanzadas2">Ver detalles</Link>
+        </article>
 
-                </div>
-            </section>
+    </div>
+</section>
 
             <section id="elegirnos" aria-labelledby="titulo-elegirnos">
                 <h2 id="titulo-elegirnos">¿Por qué elegirnos?</h2>
@@ -112,41 +156,84 @@ const Inicio = () => {
 
     </div>
 </section>
-          
-            <section id="contactanos" aria-labelledby="titulo-contacto">
-                <h2 id="titulo-contacto">Contáctanos</h2>
-                <p>¿Tienes alguna duda sobre nuestros cursos o recursos? ¡Escríbenos!</p>
-                <ul>
-                    <li><a href="mailto:MathGodigital@gmail.com">MathGodigital@gmail.com</a></li>
-                    <li><a href="tel:+573024800695">+57 302 480 0695</a></li>
-                </ul>
+      <section id="contactanos" aria-labelledby="titulo-contacto">
+    <h2 id="titulo-contacto">Contáctanos</h2>
+    <p>¿Tienes alguna duda sobre nuestros cursos o recursos? ¡Escríbenos!</p>
+    <ul>
+        <li><a href="mailto:MathGodigital@gmail.com">MathGodigital@gmail.com</a></li>
+        <li><a href="tel:+573024800695">+57 302 480 0695</a></li>
+    </ul>
 
-                <form id="formulario-contacto">
-                    <fieldset>
-                        <legend>Solicitudes</legend>
-                        
-                        <label htmlFor="nombre">Nombre completo:</label>
-                        <input id="nombre-contacto" name="nombre" type="text" autoComplete="name" required />
+    <form onSubmit={enviarContacto}>
+        <fieldset>
+            <legend>Solicitudes</legend>
+            
+            <label htmlFor="contacto-nombre">Nombre completo:</label>
+            <input 
+                id="contacto-nombre" 
+                type="text" 
+                value={contactoNombre}
+                onChange={(e) => setContactoNombre(e.target.value)}
+                required 
+            />
 
-                        <label htmlFor="correo">Correo:</label>
-                        <input id="correo-contacto" name="correo" type="email" autoComplete="email" required />
+            <label htmlFor="contacto-correo">Correo:</label>
+            <input 
+                id="contacto-correo" 
+                type="email" 
+                value={contactoCorreo}
+                onChange={(e) => setContactoCorreo(e.target.value)}
+                required 
+            />
 
-                        <label htmlFor="edad">Edad del estudiante:</label>
-                        <input id="edad" name="edad" type="number" min="3" max="100" required />
+            <label htmlFor="contacto-edad">Edad del estudiante:</label>
+            <input 
+                id="contacto-edad" 
+                type="number" 
+                min="3" 
+                max="100" 
+                value={contactoEdad}
+                onChange={(e) => setContactoEdad(e.target.value)}
+                required 
+            />
 
-                        <p id="curso-label">Curso de interés</p>
-                        <label><input type="radio" name="curso" value="refuerzo" required /> Sesiones de refuerzo personalizadas</label>
-                        <label><input type="radio" name="curso" value="fundamentos" /> Curso fundamentos de matemáticas</label>
-                        <label><input type="radio" name="curso" value="basicas" /> Matemáticas básicas (nivel 2)</label>
-                        <label><input type="radio" name="curso" value="avanzadas" /> Matemáticas avanzadas (nivel 3)</label>
-                        <label><input type="radio" name="curso" value="superior" /> Matemáticas avanzadas II (nivel superior)</label>
+            <p id="curso-label">Curso de interés</p>
+            <label>
+                <input type="radio" name="curso" value="refuerzo" checked={contactoCurso === 'refuerzo'} onChange={(e) => setContactoCurso(e.target.value)} required /> 
+                Sesiones de refuerzo personalizadas
+            </label>
+            <label>
+                <input type="radio" name="curso" value="fundamentos" checked={contactoCurso === 'fundamentos'} onChange={(e) => setContactoCurso(e.target.value)} /> 
+                Curso fundamentos de matemáticas
+            </label>
+            <label>
+                <input type="radio" name="curso" value="basicas" checked={contactoCurso === 'basicas'} onChange={(e) => setContactoCurso(e.target.value)} /> 
+                Matemáticas básicas (nivel 2)
+            </label>
+            <label>
+                <input type="radio" name="curso" value="avanzadas" checked={contactoCurso === 'avanzadas'} onChange={(e) => setContactoCurso(e.target.value)} /> 
+                Matemáticas avanzadas (nivel 3)
+            </label>
+            <label>
+                <input type="radio" name="curso" value="superior" checked={contactoCurso === 'superior'} onChange={(e) => setContactoCurso(e.target.value)} /> 
+                Matemáticas avanzadas II (nivel superior)
+            </label>
 
-                        <label htmlFor="mensaje">Mensaje:</label>
-                        <textarea id="mensaje" name="mensaje" required></textarea>
-                    </fieldset>
-                    <button type="submit">Enviar</button>
-                </form>
-            </section>
+            <label htmlFor="contacto-mensaje">Mensaje:</label>
+            <textarea 
+                id="contacto-mensaje" 
+                value={contactoMensaje}
+                onChange={(e) => setContactoMensaje(e.target.value)}
+                required
+            ></textarea>
+        </fieldset>
+        
+        <button type="submit" className="boton-ver-recursos">Enviar Mensaje</button>
+        
+        {/* Mensaje de estado (éxito o error) */}
+        {estadoEnvio && <p className={estadoEnvio.includes('éxito') ? 'mensaje-exito' : 'mensaje-error'}>{estadoEnvio}</p>}
+    </form>
+</section>
         </>
     );
 };

@@ -13,6 +13,8 @@ import Login from './pages/Login';
 import Subscripciones from './pages/Subscripciones';
 import DetalleCurso from './pages/DetalleCurso';
 import Aula from './pages/Aula';
+import Registros from "./pages/Registros";
+import RecursoDetalle from "./pages/RecursoDetalle";
 
 function App() {
   return (
@@ -33,10 +35,12 @@ function App() {
           
           {/* Rutas de recursos y preguntas frecuentes */}
           <Route path="/recursos" element={<Recursos />} />
+          <Route path="/recurso/:tipoRecurso" element={<RecursoDetalle/>}/>
           <Route path="/preguntas" element={<Preguntas />} />
           
           {/* Rutas de autenticación y perfil */}
           <Route path="/login" element={<Login />} />
+          <Route path="/registro" element={<Registros/>} />
           <Route path="/subscripciones" element={<Subscripciones />} />
           
           {/* Ruta dinámica para entrar al contenido del curso (Aula Virtual) */}

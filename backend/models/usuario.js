@@ -17,7 +17,11 @@ const usuarioSchema = new mongoose.Schema({
     contraseña: {
         type: String,
         required: true
-    }
+    },
+    cursosComprados:[{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Curso"
+    }]
 }, {
     timestamps: true
 });
