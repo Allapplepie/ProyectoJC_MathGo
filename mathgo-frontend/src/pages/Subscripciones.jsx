@@ -22,7 +22,8 @@ const Subscripciones = () => {
     const token = localStorage.getItem("tokenMathGo");
 
     // 2. Hacemos el fetch enviando el token en los headers
-    const respuesta = await fetch('http://localhost:3000/api/usuarios/mis-cursos', {
+    const respuesta = await fetch('https://mathgo-backend-vw2g.onrender.com
+/api/usuarios/mis-cursos', {
         method: 'GET',
         headers: {
             'Authorization': `Bearer ${token}` // <-- ¡AQUÍ ESTÁ LA MAGIA!

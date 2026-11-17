@@ -15,7 +15,8 @@ const Login = () => {
         setCargando(true); 
 
         try {
-            const respuesta = await fetch('http://localhost:3000/api/usuarios/login', {
+            const respuesta = await fetch('https://mathgo-backend-vw2g.onrender.com
+/api/usuarios/login', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ correo: email, contraseña: password })
