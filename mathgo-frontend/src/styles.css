@@ -61,9 +61,11 @@ header {
 }
 
 .logo img {
-    width: 42px;
-    height: 42px;
+    width: 220px !important;
+    height: 90px !important;
+    max-width: none !important;
     object-fit: contain;
+    display: block;
 }
 
 .logo p {
