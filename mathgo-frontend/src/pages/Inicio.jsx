@@ -17,8 +17,7 @@ const Inicio = () => {
         setEstadoEnvio('Enviando...');
         
         try {
-            const respuesta = await fetch('https://mathgo-backend-vw2g.onrender.com
-/api/usuarios/contacto', {
+            const respuesta = await fetch('https://mathgo-backend-vw2g.onrender.com/api/usuarios/contacto', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ 

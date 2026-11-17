@@ -16,8 +16,7 @@ const Registros = () => {
         setMensaje('');
 
         try {
-            const respuesta = await fetch('https://mathgo-backend-vw2g.onrender.com
-/api/usuarios/registro', {
+            const respuesta = await fetch('https://mathgo-backend-vw2g.onrender.com/api/usuarios/registro', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ 

@@ -32,8 +32,7 @@ const DetalleCurso = () => {
 
         try {
             // Enviamos los datos al backend (a la ruta que programamos hace tiempo)
-            const respuesta = await fetch('https://mathgo-backend-vw2g.onrender.com
-/api/usuarios/reserva', {
+            const respuesta = await fetch("https://mathgo-backend-vw2g.onrender.com/api/usuarios/reserva", {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ 
